@@ -11,20 +11,20 @@ f = open('names_2.txt', 'r')
 names_2 = f.read().split("\n")  # List containing 10000 names
 f.close()
 
-#creating a binary search tree for searching duplicates, utilizing the contain function finding duplicate
+#creating a binary search tree for searching duplicates, utilizing the contains function for finding duplicates from both lists
 BSTree = BinarySearchTree(names_1[0])
 
 duplicates = []
 
 for name in names_1[1:]:
     if BSTree.contains(name):
-       duplicates.append(name)
+        duplicates.append(name)
     else:
         BSTree.insert(name)
 
 for name in names_2:
     if BSTree.contains(name):
-       duplicates.append(name)
+        duplicates.append(name)
     else:
         BSTree.insert(name)
 
